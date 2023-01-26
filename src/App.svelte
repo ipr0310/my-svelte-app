@@ -1,45 +1,55 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import Counter from './lib/Counter.svelte'
+  import Component from "./lib/Component.svelte";
+  import Counter from "./lib/Counter.svelte";
+
+  let name = "paul";
 </script>
 
-<main>
+<div class="container">
+  <h1>My First Svelte Component</h1>
+
+  <p>Hello World, My Name is {name}</p>
+
   <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer"> 
-      <img src="/vite.svg" class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer"> 
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
+    <a target="_blank" href="https://github.com/ipr0310" rel="noreferrer">
+      Link to my Github Profile
     </a>
   </div>
-  <h1>Vite + Svelte</h1>
 
-  <div class="card">
-    <Counter />
+  <div style="margin-top:2rem">
+    <hr style="width:100%" />
   </div>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
+  <Component />
+  <Counter />
+</div>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
+  .container {
+    display: flex;
+    flex-direction: column;
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+
+  :global(h1) {
+    color: purple;
+    font-size: 4rem;
+    margin-bottom: 0;
+    animation: zoom 2s infinite;
   }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
+
+  p {
+    font-weight: 700;
+    font-size: 2rem;
   }
-  .read-the-docs {
-    color: #888;
+
+  @keyframes zoom {
+    0%,
+    100% {
+      transform: scale(0.5);
+    }
+
+    50% {
+      transform: scale(1);
+    }
   }
 </style>
