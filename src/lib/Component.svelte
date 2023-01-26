@@ -10,3 +10,9 @@
 >
   Link to my Twitter
 </a>
+
+<style>
+  p {
+    animation: zoom 2s infinite;
+  }
+</style>

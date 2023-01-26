@@ -2,10 +2,10 @@
   let count = 0;
 
   const increment = () => {
-    count += 1;
+    count++;
   };
 </script>
 
-<button on:click={increment}>
-  count is {count}
+<button on:click={increment} style="margin:1rem 0">
+  Count is {count}
 </button>

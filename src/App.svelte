@@ -1,14 +1,32 @@
 <script lang="ts">
   import Component from "./lib/Component.svelte";
   import Counter from "./lib/Counter.svelte";
+  import SvelteLogo from "./assets/svelte-logo-horizontal.svg";
 
-  let name = "paul";
+  let name = "Paul";
+
+  const changeName = () => {
+    name = name === "Paul" ? "Paola" : "Paul";
+  };
 </script>
 
 <div class="container">
+  <a
+    href="https://svelte.dev"
+    target="_blank"
+    rel="noreferrer"
+    style="align-self: center;"
+  >
+    <img src={SvelteLogo} class="logo svelte" alt="Svelte Logo" />
+  </a>
+
   <h1>My First Svelte Component</h1>
 
   <p>Hello World, My Name is {name}</p>
+
+  <button on:click={changeName}>Change Name</button>
+
+  <Counter />
 
   <div>
     <a target="_blank" href="https://github.com/ipr0310" rel="noreferrer">
@@ -16,12 +34,11 @@
     </a>
   </div>
 
-  <div style="margin-top:2rem">
+  <div>
     <hr style="width:100%" />
   </div>
 
   <Component />
-  <Counter />
 </div>
 
 <style>
@@ -37,12 +54,12 @@
     animation: zoom 2s infinite;
   }
 
-  p {
+  :global(p) {
     font-weight: 700;
     font-size: 2rem;
   }
 
-  @keyframes zoom {
+  @keyframes -global-zoom {
     0%,
     100% {
       transform: scale(0.5);
