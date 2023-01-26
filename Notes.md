@@ -1,3 +1,7 @@
+### Links
+* https://svelte.dev/docs
+* https://svelte.dev/examples/hello-world
+
 ### Important notes
 
 * You can have only 1 top-level `<style></style>` tag per svelte file/component
@@ -10,12 +14,17 @@
 * :global(h1){...properties}
 * :global(.hello){...properties}
 * @keyframes -global-zoom{...properties}
-  
+
+### Reactive declarations
+```typescript
+const count = 1;
+$: double = count * 2;
+```
 
 ### Some elements tags can be passed directly as variables (short-hand)
 ```typescript
 <script lang="ts">
-const src="assets/photo.png"
+const src="assets/photo.png";
 </script>
 
 <img alt="logo" {src} />

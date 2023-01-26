@@ -4,6 +4,7 @@
   import Counter from "./lib/Counter.svelte";
   import Component from "./lib/Component.svelte";
   import EventsListeners from "./lib/EventsListeners.svelte";
+  import ReactiveDeclarations from "./lib/ReactiveDeclarations.svelte";
 
   let name = "Paul";
 
@@ -24,7 +25,7 @@
 
   <h1>My First Svelte Component</h1>
 
-  <p>Hello World, My Name is {name}</p>
+  <p>Hello World, My Name is {name.toUpperCase()}</p>
 
   <button on:click={changeName}>Change Name</button>
 
@@ -37,6 +38,10 @@
   <Divider />
 
   <EventsListeners />
+
+  <Divider />
+
+  <ReactiveDeclarations />
 </main>
 
 <style>
