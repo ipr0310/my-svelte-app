@@ -1,7 +1,9 @@
 <script lang="ts">
-  import Component from "./lib/Component.svelte";
-  import Counter from "./lib/Counter.svelte";
   import SvelteLogo from "./assets/svelte-logo-horizontal.svg";
+  import Divider from "./lib/Divider.svelte";
+  import Counter from "./lib/Counter.svelte";
+  import Component from "./lib/Component.svelte";
+  import EventsListeners from "./lib/EventsListeners.svelte";
 
   let name = "Paul";
 
@@ -10,7 +12,7 @@
   };
 </script>
 
-<div class="container">
+<main class="container">
   <a
     href="https://svelte.dev"
     target="_blank"
@@ -28,18 +30,14 @@
 
   <Counter />
 
-  <div>
-    <a target="_blank" href="https://github.com/ipr0310" rel="noreferrer">
-      Link to my Github Profile
-    </a>
-  </div>
-
-  <div>
-    <hr style="width:100%" />
-  </div>
+  <Divider />
 
   <Component />
-</div>
+
+  <Divider />
+
+  <EventsListeners />
+</main>
 
 <style>
   .container {
@@ -47,14 +45,14 @@
     flex-direction: column;
   }
 
-  :global(h1) {
+  h1 {
     color: purple;
     font-size: 4rem;
     margin-bottom: 0;
     animation: zoom 2s infinite;
   }
 
-  :global(p) {
+  p {
     font-weight: 700;
     font-size: 2rem;
   }

@@ -1,11 +1,22 @@
 <script lang="ts">
-  let count = 0;
+  let obj = { count: 0, randomInt: 0 };
 
   const increment = () => {
-    count++;
+    obj.count++;
+    // obj.count += 1;
+  };
+
+  const doSomethingElse = () => {
+    obj.randomInt++;
   };
 </script>
 
+{JSON.stringify(obj)}
+
 <button on:click={increment} style="margin:1rem 0">
-  Count is {count}
+  The count is {obj.count}
+</button>
+
+<button on:click={doSomethingElse} style="margin:1rem 0">
+  Something Else
 </button>

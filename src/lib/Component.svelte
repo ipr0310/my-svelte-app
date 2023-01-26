@@ -11,8 +11,13 @@
   Link to my Twitter
 </a>
 
+<a target="_blank" href="https://github.com/ipr0310" rel="noreferrer">
+  Link to my Github Profile
+</a>
+
+<!-- 
 <style>
   p {
     animation: zoom 2s infinite;
   }
-</style>
+</style> -->

@@ -1,0 +1,3 @@
+<div>
+  <hr style="width:100%" />
+</div>
