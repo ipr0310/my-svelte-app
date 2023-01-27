@@ -11,6 +11,7 @@
   import AwaitBlocks from "./lib/AwaitBlocks.svelte";
   import DomEvents from "./lib/DomEvents.svelte";
   import ComponentEvents from "./lib/ComponentEvents.svelte";
+  import TextInputs from "./lib/TextInputs.svelte";
 
   const componentProps = {
     name: "Uchiha Madara",
@@ -71,6 +72,10 @@
   <Divider />
 
   <ComponentEvents on:myEvent={handleMessage} />
+
+  <Divider />
+
+  <TextInputs />
 
   <Divider />
 </main>
