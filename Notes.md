@@ -99,3 +99,35 @@ But that's a lot of code to write, so Svelte gives us an equivalent shorthand â€
 
 <Inner on:message />
 ```
+
+### DOM Events forwarding
+Event forwarding works for DOM events too.
+
+We want to get notified of clicks on our <CustomButton> â€” to do that, we just need to forward click events on the <button> element in CustomButton.svelte:
+
+```typescript
+<script>
+	import CustomButton from './CustomButton.svelte';
+
+	function handleClick() {
+		alert('Button Clicked');
+	}
+</script>
+
+<CustomButton on:click={handleClick} />
+```
+
+```typescript
+<button on:click>Click me</button>
+
+<style>
+	button {
+		background: #e2e8f0;
+		color: #64748b;
+		border: unset;
+		border-radius: 6px;
+		padding: 0.75rem 1.5rem;
+		cursor: pointer;
+	}
+</style>
+```

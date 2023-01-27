@@ -88,11 +88,6 @@
     animation: zoom 2s infinite;
   }
 
-  p {
-    font-weight: 700;
-    font-size: 2rem;
-  }
-
   @keyframes -global-zoom {
     0%,
     100% {
