@@ -5,11 +5,20 @@
   import Component from "./lib/Component.svelte";
   import EventsListeners from "./lib/EventsListeners.svelte";
   import ReactiveDeclarations from "./lib/ReactiveDeclarations.svelte";
+  import ComponentProps from "./lib/ComponentProps.svelte";
+  import ConditionalRendering from "./lib/ConditionalRendering.svelte";
+  import LoopRendering from "./lib/LoopRendering.svelte";
+  import AwaitBlocks from "./lib/AwaitBlocks.svelte";
+  import DomEvents from "./lib/DomEvents.svelte";
+  import ComponentEvents from "./lib/ComponentEvents.svelte";
 
-  let name = "Paul";
+  const componentProps = {
+    name: "Uchiha Madara",
+    answer: 65,
+  };
 
-  const changeName = () => {
-    name = name === "Paul" ? "Paola" : "Paul";
+  const handleMessage = (event: CustomEvent<{ text: string }>) => {
+    alert(event.detail.text);
   };
 </script>
 
@@ -25,10 +34,6 @@
 
   <h1>My First Svelte Component</h1>
 
-  <p>Hello World, My Name is {name.toUpperCase()}</p>
-
-  <button on:click={changeName}>Change Name</button>
-
   <Counter />
 
   <Divider />
@@ -42,6 +47,32 @@
   <Divider />
 
   <ReactiveDeclarations />
+
+  <Divider />
+
+  <ComponentProps {...componentProps} />
+
+  <Divider />
+
+  <ConditionalRendering />
+
+  <Divider />
+
+  <LoopRendering />
+
+  <Divider />
+
+  <AwaitBlocks />
+
+  <Divider />
+
+  <DomEvents />
+
+  <Divider />
+
+  <ComponentEvents on:myEvent={handleMessage} />
+
+  <Divider />
 </main>
 
 <style>

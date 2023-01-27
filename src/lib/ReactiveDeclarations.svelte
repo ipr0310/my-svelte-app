@@ -9,6 +9,11 @@
   // This variable will always get updated when the variable count receive changes
   $: double = count * 2;
 
+  $: if (count >= 10) {
+    alert("count is dangerously high!");
+    count = 0;
+  }
+
   // Reactive statement
   // This will log only when the variable count gets updates
   $: console.log("Count:", count);
