@@ -24,6 +24,26 @@
 
   // Text area
   let textAreaValue = `Some words are *italic*, some are **bold**`;
+
+  // Select inputs
+  let questions = [
+    {
+      id: 1,
+      text: `Where did you go to school?`,
+    },
+    {
+      id: 2,
+      text: `What is your mother's name?`,
+    },
+    {
+      id: 3,
+      text: `What is another personal fact that an attacker could easily find with Google?`,
+    },
+  ];
+
+  let selected = 0;
+
+  let answer = "";
 </script>
 
 <h1>Text Inputs</h1>
@@ -109,12 +129,27 @@
 
 {@html marked(textAreaValue)}
 
-<textarea bind:value={textAreaValue} />
+<textarea
+  bind:value={textAreaValue}
+  style="width:100%;height:100px;margin-bottom:2em;"
+/>
 
-<style>
-  textarea {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 2em;
-  }
-</style>
+<h2>Select Inputs</h2>
+
+<select bind:value={selected} on:change={() => (answer = "")}>
+  <option value={0} aria-readonly="true" disabled>Pick a question</option>
+
+  {#each questions as question}
+    <option value={question.id}>
+      {question.text}
+    </option>
+  {/each}
+</select>
+
+{#if selected}
+  <p>
+    You had selected question #{selected}
+  </p>
+{:else}
+  <p>You have picked no questions</p>
+{/if}
