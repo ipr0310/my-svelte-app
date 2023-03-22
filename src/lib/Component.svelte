@@ -5,7 +5,7 @@
     name = name === "Paul" ? "Paola" : "Paul";
   };
 
-  const string = `this string contains some <strong>HTML!!!</strong>`;
+  const string = `this string contains some <strong>HTML Snippet!!!</strong>`;
 </script>
 
 <h1>Another Component</h1>
@@ -29,9 +29,8 @@
 
 <p>{@html string}</p>
 
-<!-- 
-<style>
+<!-- <style>
   p {
-    animation: zoom 2s infinite;
+    animation: zoom 1s infinite;
   }
 </style> -->

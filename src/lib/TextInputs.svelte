@@ -103,12 +103,7 @@
 
 {#each menu as flavour}
   <label>
-    <input
-      type="checkbox"
-      bind:group={flavours}
-      name="flavours"
-      value={flavour}
-    />
+    <input type="checkbox" bind:group={flavours} value={flavour} />
     {flavour}
   </label>
 {/each}
@@ -125,18 +120,13 @@
   </p>
 {/if}
 
-<h2>Textarea Inputs</h2>
-
-{@html marked(textAreaValue)}
-
-<textarea
-  bind:value={textAreaValue}
-  style="width:100%;height:100px;margin-bottom:2em;"
-/>
-
 <h2>Select Inputs</h2>
 
-<select bind:value={selected} on:change={() => (answer = "")}>
+<select
+  bind:value={selected}
+  on:change={() => (answer = "")}
+  style="margin-bottom:1rem"
+>
   <option value={0} aria-readonly="true" disabled>Pick a question</option>
 
   {#each questions as question}
@@ -146,6 +136,11 @@
   {/each}
 </select>
 
+<!-- <p>
+  {selected ? "Nice question" : "Waiting..."}
+  {!selected && "Waiting..."}
+</p> -->
+
 {#if selected}
   <p>
     You had selected question #{selected}
@@ -153,3 +148,22 @@
 {:else}
   <p>You have picked no questions</p>
 {/if}
+
+<h2>Multiple Select Inputs</h2>
+
+<select multiple bind:value={flavours}>
+  {#each menu as flavour}
+    <option value={flavour}>
+      {flavour}
+    </option>
+  {/each}
+</select>
+
+<h2>Textarea Inputs</h2>
+
+{@html marked(textAreaValue)}
+
+<textarea
+  bind:value={textAreaValue}
+  style="width:100%;height:100px;margin-bottom:2em;"
+/>

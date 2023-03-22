@@ -1,11 +1,11 @@
 <script lang="ts">
   const getRandomNumber = async () => {
-    const res = await fetch(`https://svelte.dev/tutorial/random-number`);
-    const text = await res.text();
+    const response = await fetch(`https://svelte.dev/tutorial/random-number`);
+    const text = await response.text();
 
-    if (res.ok) return text;
+    if (response.ok) return text;
 
-    throw new Error(text);
+    throw new Error("Request failed");
   };
 
   let promise = getRandomNumber();

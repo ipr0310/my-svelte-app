@@ -78,6 +78,18 @@
   <TextInputs />
 
   <Divider />
+
+  <h2>
+    Iframe works pretty nice, try doing that with React as simple as this :V
+  </h2>
+
+  <iframe
+    src="https://svelte.dev"
+    width="300"
+    height="400"
+    title="Iframe Example"
+  />
+  <Divider />
 </main>
 
 <style>

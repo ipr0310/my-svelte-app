@@ -3,11 +3,10 @@
 
   const increment = () => {
     obj.count++;
-    // obj.count += 1;
   };
 
   const doSomethingElse = () => {
-    obj.randomInt++;
+    obj.randomInt += 1;
   };
 </script>
 

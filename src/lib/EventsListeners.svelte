@@ -6,24 +6,29 @@
   const showAlert = () => alert("Showing alert");
 </script>
 
-<h1 on:click|preventDefault|stopPropagation|once={onClick}>Event Listeners</h1>
+<button on:click|preventDefault|stopPropagation|once={onClick}>
+  Event Listeners
+</button>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
+  style="padding:1rem"
   on:click|self={() => {
     console.log("parent");
   }}
 >
   parent
 
-  <div
+  <button
+    style="margin:1rem 0"
     on:click={() => {
       console.log("children");
     }}
   >
     children
-  </div>
+  </button>
 
   <button on:click|once={showAlert}>
-    Click me (Alert will be shown only once)</button
-  >
+    Click me (Alert will be shown only once)
+  </button>
 </div>

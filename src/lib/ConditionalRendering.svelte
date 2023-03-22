@@ -1,6 +1,7 @@
 <script lang="ts">
-  let active = true;
   const count = 4;
+
+  let active = true;
 
   const toggle = () => {
     active = !active;
