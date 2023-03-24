@@ -12,6 +12,7 @@
   import DomEvents from "./lib/DomEvents.svelte";
   import ComponentEvents from "./lib/ComponentEvents.svelte";
   import TextInputs from "./lib/TextInputs.svelte";
+  import Lifecycle from "./lib/Lifecycle/index.svelte";
 
   const componentProps = {
     name: "Uchiha Madara",
@@ -89,6 +90,10 @@
     height="400"
     title="Iframe Example"
   />
+  <Divider />
+
+  <Lifecycle />
+
   <Divider />
 </main>
 
